@@ -11,7 +11,7 @@ import Locators.HomePageLocators;
 public class HomePageComponent extends HomePageLocators {
 	public WebDriver driver;
 	public RegistrationComponent regComp;
-	Actions act=new Actions(driver);
+	
 
 	public HomePageComponent(WebDriver driver) {
 		this.driver = driver;
@@ -54,6 +54,10 @@ public class HomePageComponent extends HomePageLocators {
 		return regComp;
 	}
 	public HomePageComponent logout(){
+		/*Actions act=new Actions(driver);
+		act.moveToElement(driver.findElement(DROPDWN_LST))
+			.click()
+			.click(driver.findElement(LOGOUTLINK)).build().perform();*/
 		driver.findElement(DROPDWN_LST).click();
 		driver.findElement(LOGOUTLINK).click();
 		return this;

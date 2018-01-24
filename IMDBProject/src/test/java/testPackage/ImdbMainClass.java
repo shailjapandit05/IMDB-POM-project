@@ -1,5 +1,7 @@
 package testPackage;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -11,6 +13,7 @@ import org.testng.annotations.Test;
 import Components.HomePageComponent;
 import Components.RegistrationComponent;
 import Components.mostPopularTVshowComponent;
+import helperClasses.DataSheetTest;
 import helperClasses.driverSetup;
 
 public class ImdbMainClass {
@@ -20,8 +23,9 @@ public class ImdbMainClass {
 	public void setBrowsers(String browser){
 
 		driver = driverSetup.initDriver(browser);
-		driver.get("http://www.imdb.com/");	
 		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.get("http://www.imdb.com/");	
 	}
 
 	@Test
@@ -38,10 +42,10 @@ public class ImdbMainClass {
 		new mostPopularTVshowComponent(driver).clickLink().verifyCreatorName();
 	}
 	
-	@Test
-	public void scenarioThree(){
+	@Test(dataProviderClass=DataSheetTest.class,dataProvider="userData")
+	public void scenarioThree(String name,String email,String pass,String rePass) throws Exception{
 		new HomePageComponent(driver).clickOnSignIn();
-		new RegistrationComponent(driver).clickOnCreateNewAcntBtn().createAccount();
+		new RegistrationComponent(driver).clickOnCreateNewAcntBtn().createAccount(name,email,pass,rePass);
 		new HomePageComponent(driver).logout();
 	}
 	

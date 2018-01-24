@@ -16,13 +16,13 @@ public class HomePageLocators {
 	public final By MOVIES_TAB=By.id("navTitleMenu");
 	public final By MOST_POPULAR_LNK=By.xpath("//a[text()='Most Popular TV Shows']");
     public final By OTHER_SGN_IN_LNK=By.partialLinkText("Other Sign in options");
-    public final By DROPDWN_LST=By.xpath("//li[@id='navUserMenu']");
+    public final By DROPDWN_LST=By.xpath("//li[@id='navUserMenu']/span[@class='downArrow']");
     public final By LOGOUTLINK=By.partialLinkText("Log Out");
 	
 	public WebElement getMOVIES_TAB(WebDriver driver) {
 		return driver.findElement(MOVIES_TAB);
 	}
-	public By getSERCH_BTN() {
+	public By getDRPDWN_LST() {
 		return SERCH_BTN;
 	}
 

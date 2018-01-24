@@ -8,9 +8,9 @@
 			<class name="testPackage.ImdbMainClass">
 				<methods>
 
-<!-- 					<include name="scenarioOne"></include> -->
-<!-- 					<include name="scenarioTwo"></include> -->
-                        <include name="scenarioThree"></include>
+					<include name="scenarioOne"></include>
+					<include name="scenarioTwo"></include>
+                    <include name="scenarioThree"></include>
 
 				</methods>
 			</class>
