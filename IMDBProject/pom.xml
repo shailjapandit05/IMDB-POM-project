@@ -12,11 +12,6 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
-<!-- 	<parent> -->
-<!-- 		<groupId>com.ebay.testinfrastructure</groupId> -->
-<!-- 		<artifactId>testinfra-parent</artifactId> -->
-<!-- 		<version>release-SNAPSHOT</version> -->
-<!-- 	</parent> -->
 
 	<dependencies>
 		<dependency>
